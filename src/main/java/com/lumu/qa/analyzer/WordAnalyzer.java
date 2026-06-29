@@ -7,8 +7,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class WordAnalyzer {
+public class WordAnalyzer implements TextAnalyzer {
 
+    @Override
     public WordAnalysis analyze(String text) {
         String[] words = tokenize(text);
         return new WordAnalysis(words.length, buildFrequencies(words));

@@ -15,7 +15,7 @@ class FrequencySorterTest {
 
     @BeforeEach
     void setUp() {
-        sorter = new FrequencySorter();
+        sorter = new MergeFrequencySorter();
     }
 
     @Test

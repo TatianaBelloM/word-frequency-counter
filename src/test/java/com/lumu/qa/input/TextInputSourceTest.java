@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class TextInputSourceTest {
 
@@ -75,5 +76,19 @@ class TextInputSourceTest {
         assertFalse(content.isBlank());
         assertTrue(content.contains("lorem"));
         assertTrue(content.contains("ipsum"));
+    }
+
+    @Test
+    void classpathInputSourceReadsResourceByName() throws IOException {
+        TextInputSource source = new ClasspathInputSource("lorem-ipsum.txt");
+        String content = source.read();
+        assertFalse(content.isBlank());
+        assertTrue(content.contains("lorem"));
+    }
+
+    @Test
+    void classpathInputSourceThrowsIOExceptionForMissingResource() {
+        TextInputSource source = new ClasspathInputSource("non_existent.txt");
+        assertThrows(IOException.class, source::read);
     }
 }

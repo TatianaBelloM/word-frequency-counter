@@ -4,7 +4,7 @@ import com.lumu.qa.analyzer.WordAnalyzer;
 import com.lumu.qa.model.AnalysisResult;
 import com.lumu.qa.model.WordFrequency;
 import com.lumu.qa.normalizer.AlphaTextNormalizer;
-import com.lumu.qa.sorter.FrequencySorter;
+import com.lumu.qa.sorter.MergeFrequencySorter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +26,7 @@ class WordFrequencyCounterTest {
         counter = new WordFrequencyCounter(
                 new AlphaTextNormalizer(),
                 new WordAnalyzer(),
-                new FrequencySorter()
+                new MergeFrequencySorter()
         );
     }
 
