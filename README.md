@@ -6,7 +6,7 @@ Algoritmo que lee un archivo de texto, cuenta la frecuencia de cada palabra y co
 
 ```bash
 mvn compile
-mvn exec:java -Dexec.mainClass="com.lumu.qa.WordFrequencyApp" -Dexec.args="input.txt"
+mvn --% exec:java -Dexec.mainClass=com.lumu.qa.WordFrequencyApp -Dexec.args=src/main/resources/input.txt
 ```
 
 ## Complejidad del algoritmo
